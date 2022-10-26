@@ -36,11 +36,18 @@ public class JobTest {
     assertEquals(testJob.getCoreCompetency().getValue(), "Persistence");
 }
 @Test
-
     public void testJobsForEquality() {
     testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
     testJob2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
     assertFalse(testJob.getId() == testJob2.getId());
+}
+@Test
+    public void testToStringStartsAndEndsWithNewLine(){
+    Job job = new Job();
+    char lastChar = job.toString().charAt(job.toString().length()-1);
+    char firstChar = job.toString().charAt(0);
+    assertEquals(lastChar, '\n');
+    assertEquals(firstChar, '\n');
 }
 }

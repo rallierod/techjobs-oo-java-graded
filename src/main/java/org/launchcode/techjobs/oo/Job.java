@@ -16,7 +16,7 @@ public class Job {
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
-    public Job(){
+    public Job() {
         id = nextId;
         nextId++;
     }
@@ -91,4 +91,15 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
-}
+
+    @Override
+    public String toString() {
+        return
+                "\nname='" + name +
+                "\nemployer=" + employer +
+                "\nlocation=" + location +
+                "\npositionType=" + positionType +
+                "\ncoreCompetency=" + coreCompetency + "\n" ;
+    };
+    }
+
