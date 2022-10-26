@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class Job {
@@ -94,25 +96,59 @@ public class Job {
 
     @Override
     public String toString() {
-        String noData = "Data not available";
         String oops = "OOPS! This job does not seem to exist.";
-
+        String noData = "Data not available";
+        String theName;
         String theEmployer;
         String theLocation;
         String thePosition;
         String theCompetency;
         int start = 0;
+        String empty = "";
+        if(name == null) {
+            theName = noData;
+            start++;
+        }else {
+            theName = name;
+        }
+        if(employer == null || employer.getValue() == empty) {
+            theEmployer = noData;
+            start++;
+        } else {
+            theEmployer = employer.getValue();
+        }
+        if(location == null || location.getValue() ==empty) {
+            theLocation =noData;
+            start++;
+        } else {
+            theLocation = location.getValue();
+        }
+        if(positionType == null || positionType.getValue() == empty) {
+            thePosition = noData;
+            start++;
+        } else {
+            thePosition = positionType.getValue();
+        }
+        if(coreCompetency == null || coreCompetency.getValue() == empty) {
+            theCompetency = noData;
+            start++;
+        } else {
+            theCompetency = coreCompetency.getValue();
+        }
 
-
-        return  "\n" +
-                "ID: " + id +
-                "\nName: " + name +
-                "\nEmployer: " + employer +
-                "\nLocation: " + location +
-                "\nPosition Type: " + positionType +
-                "\nCore Competency: " + coreCompetency +
-                "\n";
-
+        String toStringVar = ("\n" +
+                "ID: " + getId() +
+                "\nName: " + getName() +
+                "\nEmployer: " + theEmployer +
+                "\nLocation: " + theLocation +
+                "\nPosition Type: " + thePosition +
+                "\nCore Competency: " + theCompetency +
+                "\n");
+        if (empty.equals("")){
+            return toStringVar;
+        } else {
+            return oops;
+        }
 
 
 
@@ -121,5 +157,7 @@ public class Job {
 
     }
 }
+
+
 
 

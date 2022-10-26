@@ -66,7 +66,7 @@ public class JobTest {
 
 @Test
     public void testToStringHandlesEmptyField(){
-    Job job = new Job("Product tester", new Employer(), new Location("StL"), new PositionType(""), new CoreCompetency("Java"));
+    Job job = new Job("Product tester", new Employer(), new Location("StL"), new PositionType(), new CoreCompetency("Java"));
     String jobHolder = "\nID: " + job.getId() +
             "\nName: "+ job.getName() +
             "\nEmployer: " + job.getEmployer()+
