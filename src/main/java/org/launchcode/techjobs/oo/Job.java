@@ -94,12 +94,32 @@ public class Job {
 
     @Override
     public String toString() {
-        return
-                "\nname='" + name +
-                "\nemployer=" + employer +
-                "\nlocation=" + location +
-                "\npositionType=" + positionType +
-                "\ncoreCompetency=" + coreCompetency + "\n" ;
-    };
+        String noData = "Data not available";
+        String oops = "OOPS! This job does not seem to exist.";
+
+        String theEmployer;
+        String theLocation;
+        String thePosition;
+        String theCompetency;
+        int start = 0;
+
+
+        return  "\n" +
+                "ID: " + id +
+                "\nName: " + name +
+                "\nEmployer: " + employer +
+                "\nLocation: " + location +
+                "\nPosition Type: " + positionType +
+                "\nCore Competency: " + coreCompetency +
+                "\n";
+
+
+
+
+
+
+
     }
+}
+
 
